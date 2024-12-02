@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Map Example</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        
+        p {
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        
+        img {
+            display: block;
+            margin: 0 auto 20px; 
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #ddd; 
+        }
+
+        
+        area {
+            cursor: pointer;
+        }
+
+        area:hover {
+            opacity: 0.7; 
+        }
+
+       
+       
+    </style>
+</head>
+<body>
+    <h1>Interactive Image Map</h1>
+    <p>Click on different parts of the image to navigate to various pages:</p>
+    
+    
+    <img src="image2.png" alt="Sample Image Map" usemap="#image-map">
+    
+    
+    <map name="image-map">
+        <area shape="rect" coords="155,8,265,115" target="_blank" alt="Section 1" href="https://www.wikipedia.org">
+        <area shape="circle" coords="343,9,8" target="_blank" alt="Section 2" href="https://openai.com/index/chatgpt/">
+        <area shape="poly" coords="155,8,265,115,343,9,351,112,67,10,72,116" target="_blank" alt="Section 3" href="https://www.youtube.com/">
+    </map>
+    
+    <p>Each area on the image is clickable and will navigate to a different webpage.</p>
+</body>
+</html>

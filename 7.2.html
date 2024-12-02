@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+      margin: 0;
+    }
+    .form-container {
+      width: 300px;
+      padding: 20px;
+      margin: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+    .password-container {
+      position: relative;
+    }
+    .toggle-visibility {
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      cursor: pointer;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #5cb85c;
+      color: white;
+      font-size: 16px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4cae4c;
+    }
+    .error {
+      color: red;
+      font-size: 12px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Form -->
+  <div class="form-container">
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="validateLogin(); return false;">
+      <label for="loginEmail">Email:</label>
+      <input type="email" id="loginEmail" required>
+      <span class="error" id="loginEmailError"></span>
+
+      <label for="loginPassword">Password:</label>
+      <div class="password-container">
+        <input type="password" id="loginPassword" required minlength="6">
+        <span class="toggle-visibility" onclick="togglePasswordVisibility('loginPassword')">👁️</span>
+      </div>
+      <span class="error" id="loginPasswordError"></span>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Registration Form -->
+  <div class="form-container">
+    <h2>Register</h2>
+    <form id="registerForm" onsubmit="validateRegister(); return false;">
+      <label for="regEmail">Email:</label>
+      <input type="email" id="regEmail" required>
+      <span class="error" id="regEmailError"></span>
+
+      <label for="regPassword">Password:</label>
+      <div class="password-container">
+        <input type="password" id="regPassword" required minlength="6">
+        <span class="toggle-visibility" onclick="togglePasswordVisibility('regPassword')">👁️</span>
+      </div>
+      <span class="error" id="regPasswordError"></span>
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <div class="password-container">
+        <input type="password" id="confirmPassword" required>
+        <span class="toggle-visibility" onclick="togglePasswordVisibility('confirmPassword')">👁️</span>
+      </div>
+      <span class="error" id="confirmPasswordError"></span>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    // Function to toggle password visibility
+    function togglePasswordVisibility(id) {
+      const passwordField = document.getElementById(id);
+      const currentType = passwordField.type;
+      passwordField.type = currentType === "password" ? "text" : "password";
+    }
+
+    // Login form validation
+    function validateLogin() {
+      let email = document.getElementById('loginEmail').value;
+      let password = document.getElementById('loginPassword').value;
+      let emailError = document.getElementById('loginEmailError');
+      let passwordError = document.getElementById('loginPasswordError');
+      emailError.style.display = passwordError.style.display = 'none';
+
+      let valid = true;
+      // Email Validation
+      if (!/^[\w\.\-]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+        emailError.innerText = 'Invalid email';
+        emailError.style.display = 'block';
+        valid = false;
+      }
+      // Password Validation
+      if (password.length < 6) {
+        passwordError.innerText = 'Password must be at least 6 characters';
+        passwordError.style.display = 'block';
+        valid = false;
+      }
+
+      if (valid) {
+        alert('Login Successful!');
+      }
+    }
+
+    // Registration form validation
+    function validateRegister() {
+      let email = document.getElementById('regEmail').value;
+      let password = document.getElementById('regPassword').value;
+      let confirmPassword = document.getElementById('confirmPassword').value;
+      let emailError = document.getElementById('regEmailError');
+      let passwordError = document.getElementById('regPasswordError');
+      let confirmPasswordError = document.getElementById('confirmPasswordError');
+
+      emailError.style.display = passwordError.style.display = confirmPasswordError.style.display = 'none';
+
+      let valid = true;
+      // Email Validation
+      if (!/^[\w\.\-]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+        emailError.innerText = 'Invalid email';
+        emailError.style.display = 'block';
+        valid = false;
+      }
+      // Password Validation
+      if (password.length < 6) {
+        passwordError.innerText = 'Password must be at least 6 characters';
+        passwordError.style.display = 'block';
+        valid = false;
+      }
+      // Confirm Password Validation
+      if (password !== confirmPassword) {
+        confirmPasswordError.innerText = 'Passwords do not match';
+        confirmPasswordError.style.display = 'block';
+        valid = false;
+      }
+
+      if (valid) {
+        alert('Registration Successful!');
+      }
+    }
+  </script>
+</body>
+</html>

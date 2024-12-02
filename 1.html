@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Custom Webpage</title>
+    
+</head>
+<body>
+
+    
+    <h1>My Custom Webpage</h1>
+    <h2>Text Formatting</h2>
+    <p>Welcome to my webpage! Here is some <b>bold text</b>, some <i>italic text</i>, and even <u>underlined text</u>.</p>
+
+    <h2 align ="center">Image Section</h2>
+    <div class="image-container">
+        <img src="images/3.png" alt="Sample Image">
+    </div>
+    <p>Check out this <a href="https://www.example.org" target="_blank">awesome website</a>!</p>
+    <p>Go to <a href="#section2">Section 2</a>.</p>
+
+    
+    <h2>My Favorite Foods</h2>
+    <p>Unordered List:</p>
+    <ul>
+        <li>Pizza</li>
+        <li>Burgers</li>
+        <li>Biryani</li>
+    </ul>
+    <p>Ordered List:</p>
+    <ol>
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Cherries</li>
+    </ol>
+
+    
+    <p>This is a paragraph that explains my favorite foods.</p>
+    <p>Another paragraph provides more details about why I like them.</p>
+
+    
+    <h2>Sample Data Table</h2>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>Laptop</td>
+            <td>$1000</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>$500</td>
+            <td>5</td>
+        </tr>
+    </table>
+
+    
+    <h2 id="section2">Section 2: Additional Information</h2>
+    <p>This section contains additional details that are linked to the bookmark above.</p>
+
+    
+    <h2>Embedded Content</h2>
+    <iframe src="https://en.wikipedia.org/wiki/Main_Page" width="400" height="300"></iframe>
+
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin-left: 20px;
+            background-color:whitesmoke;
+            color:black;
+        }
+
+        
+        h1 {
+            text-align: center;
+            color: blue;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: black;
+            margin-top: 20px;
+            text-decoration: underline;
+        }
+
+        
+        p {
+            margin: 10px 0;
+        }
+
+        p a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        img {
+            width: 200px;
+            height: 150px;
+        }
+
+        
+        ul {
+            list-style-type: circle;
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        ol li {
+            margin: 5px 0;
+        }
+
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            
+        }
+
+        table th {
+            background-color: #0056b3;
+            color:whitesmoke;
+        }
+
+
+        
+        #section2 {
+            margin-top: 30px;
+        }
+
+        
+        iframe {
+            border: 1px solid whitesmoke;
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</body>
+</html>
